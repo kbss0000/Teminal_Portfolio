@@ -6,7 +6,7 @@ An immersive terminal-based portfolio website inspired by The Matrix, featuring 
 
 ## Features
 
-- **Terminal Emulator Interface**: Navigate through the portfolio using Unix-like commands
+- **Terminal Emulator Interface**: Navigate through the portfolio using Unix-like commands and also auto tab completion
 - **Matrix Rain Animation**: Animated background inspired by The Matrix movie
 - **Responsive Design**: Fully optimized for mobile and desktop devices
 - **Interactive Commands**: Type commands like `ls`, `help`, `about`, `projects`, `experience` to explore
