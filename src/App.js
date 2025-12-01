@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Research from './pages/Research';
-import Misc from './pages/Misc';
+import Experience from './pages/Experience';
 import MainPage from './pages/MainPage';
 
 const App = () => (
@@ -11,8 +10,7 @@ const App = () => (
         <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/research" element={<Research />} />
-            <Route path="/misc" element={<Misc />} />
+            <Route path="/experience" element={<Experience />} />
             <Route path="/" element={<MainPage />} />
         </Routes>
     </Router>

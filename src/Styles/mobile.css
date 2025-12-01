@@ -1,0 +1,101 @@
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .terminal-container {
+        width: 95% !important;
+        height: 85% !important;
+        max-height: 90vh !important;
+        padding: 10px !important;
+        border-width: 3px !important;
+    }
+
+    .modal-content h2 {
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .modal-content h3 {
+        font-size: 16px !important;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .modal-content p {
+        margin-bottom: 10px !important;
+        line-height: 1.4 !important;
+    }
+
+    .modal-content ul {
+        padding-left: 20px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .modal-content li {
+        margin-bottom: 5px !important;
+        line-height: 1.4 !important;
+    }
+
+    .modal-content a {
+        word-break: break-all;
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-container {
+        width: 98% !important;
+        height: 90% !important;
+        padding: 8px !important;
+        border-width: 2px !important;
+    }
+
+    .modal-content {
+        padding: 10px !important;
+        font-size: 11px !important;
+    }
+
+    .modal-content h2 {
+        font-size: 16px !important;
+    }
+
+    .modal-content h3 {
+        font-size: 14px !important;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    .close {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    input[type="text"] {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+
+    .modal-content img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Prevent text selection on mobile for better UX */
+@media (max-width: 768px) {
+    .terminal-container {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    input[type="text"] {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+}
+

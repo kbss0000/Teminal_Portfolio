@@ -3,34 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../Components/Page Layout/Layout';
 import '../Styles/styles.css';
 import { BioModal, ResumeModal } from "../Components/About Page/AboutModal";
-// import { WorkingMemory, ChatMessageRoleEnum, Memory } from "@opensouls/core";
-// import { externalDialog } from "./lib/cogntiveSteps.js";
-
 
 const About = () => {
     const navigate = useNavigate();
     const [isBioOpen, setIsBioOpen] = useState(false);
-    const [isAnimatingClose, setIsAnimatingClose] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [isResumeOpen, setIsResumeOpen] = useState(false);
-
-    // // Initialize WorkingMemory with initial memories
-    // let workingMemory = new WorkingMemory({
-    //     soulName: "A Helpful Assistant",
-    //     memories: [
-    //         {
-    //             role: ChatMessageRoleEnum.System,
-    //             content: "You are modeling the mind of a helpful AI assistant",
-    //         },
-    //     ],
-    // });
-    //
-    // async function withReply(workingMemory: WorkingMemory, newMessage: Memory): Promise<WorkingMemory> {
-    //     // externalDialog is a cognitiveStep defined in another function.
-    //     const [updatedMemory, response] = await externalDialog(workingMemory, newMessage);
-    //     console.log("AI:", response);
-    //     return updatedMemory;
-    // }
 
     const closeModal = (modalType) => {
         if (isClosing) return;
@@ -46,62 +24,29 @@ const About = () => {
         }, 1500);
     };
 
-    const commands = {
+    const commands = React.useMemo(() => ({
         ls: {
             description: 'Show everything on the page',
             fn: function () {
-                return 'Resume\nLinkedin\nGithub\nEmail\nBio';
+                return 'resume\\nlinkedin\\ngithub\\nemail\\nbio';
             }
         },
-
         about: {
             description: 'You are here',
             fn: function () {
                 return 'You are already at the about page';
             }
         },
-
-        projects: {
-            description: 'Go to Projects page',
-            fn: function () {
-                setTimeout(function () {
-                    navigate('/projects');
-                }, 1200);
-                return 'Redirecting to the projects Page ...';
-            }
-        },
-
-        research: {
-            description: 'Go to Research page',
-            fn: function () {
-                setTimeout(function () {
-                    navigate('/research');
-                }, 1200);
-                return 'Redirecting to the Research Page ...';
-            }
-        },
-
-        misc: {
-            description: 'Go to Misc page',
-            fn: function () {
-                setTimeout(function () {
-                    navigate('/misc');
-                }, 1200);
-                return 'Redirecting to the Miscellaneous Page ...';
-            }
-        },
-
         cd: {
-            description: 'Go to Main page',
+            description: 'Go back',
             fn: function () {
                 setTimeout(function () {
                     navigate('/');
                 }, 1200);
-                return 'Redirecting to the Main Page ...';
+                return 'redirecting to the main page ...';
             }
         },
-
-        Resume: {
+        resume: {
             description: 'Open my resume',
             fn: function () {
                 setTimeout(function () {
@@ -110,38 +55,34 @@ const About = () => {
                 return 'Here it comes...';
             }
         },
-
-        Linkedin:{
+        linkedin: {
             description: 'Go to Linkedin profile',
             fn: function () {
                 setTimeout(function () {
-                    window.open('https://www.linkedin.com/in/asigdel/', '_blank');
+                    window.open('https://www.linkedin.com/in/kbssrikar/', '_blank');
                 }, 1200);
                 return 'Redirecting to the Linkedin Profile ...';
             }
         },
-
-        Github:{
+        github: {
             description: 'Go to Github profile',
             fn: function () {
                 setTimeout(function () {
-                    window.open('https://www.github.com/asigdel29/', '_blank');
+                    window.open('https://www.github.com/kbss0000/', '_blank');
                 }, 1200);
                 return 'Redirecting to the Github Profile ...';
             }
         },
-
-        Email: {
+        email: {
             description: 'Shoot me an email',
             fn: function () {
                 setTimeout(function () {
-                    window.open('mailto:sigdelanubhav@gmail.com', '_blank');
+                    window.open('mailto:kbsivasrikar@gmail.com', '_blank');
                 }, 1200);
                 return 'I tend to respond quick';
             }
         },
-
-        Bio: {
+        bio: {
             description: 'A little about me',
             fn: function () {
                 setTimeout(function () {
@@ -149,15 +90,33 @@ const About = () => {
                 }, 1200);
                 return 'Get to know me more...';
             }
+        },
+        whoami: {
+            description: 'Current user',
+            fn: function () {
+                return 'KBS';
+            }
+        },
+        date: {
+            description: 'Current date',
+            fn: function () {
+                return new Date().toString();
+            }
+        },
+        pwd: {
+            description: 'Print working directory',
+            fn: function () {
+                return '/home/kbs/about';
+            }
         }
-    };
+    }), [navigate]);
 
     return (
-        <Layout commands={commands} welcomeMessage="Yoou've made it to the About page. Enter the command 'ls' to find out more. Use 'cd' to go back to the main page.">
-            {isBioOpen && !isAnimatingClose && !isClosing && (
+        <Layout commands={commands} welcomeMessage="You've made it to the About page. Enter the command 'ls' to find out more. Use 'cd' to go back to the main page.">
+            {isBioOpen && !isClosing && (
                 <BioModal isOpen={isBioOpen} onClose={() => closeModal('bio')} />
             )}
-            {isResumeOpen && !isAnimatingClose && !isClosing && (
+            {isResumeOpen && !isClosing && (
                 <ResumeModal isOpen={isResumeOpen} onClose={() => closeModal('resume')} />
             )}
         </Layout>

@@ -1,122 +1,72 @@
 const ResumeContent = `
 <pre>
-If you want a pdf copy, you can visit the link <a href="http://cs.oswego.edu/~asigdel/Resume%20(1).pdf" style="color: #00FF00; text-decoration: underline;">here</a>.
-                              
-                              Anubhav Sigdel
+                    Kasilanka Bhoopesh Siva Srikar
+
+8330986424 | kbsivasrikar@gmail.com | LinkedIn | Portfolio | GitHub
 
 EDUCATION
-State University of New York Oswego, NY
-Bachelors in Computer Science and Cognitive Science
-August 2019-May 2023
-● Destination Oswego Scholarship, President’s List, Dean’s List
+Vellore Institute of Technology, Vellore, Tamil Nadu
+Bachelor of Technology in Computer Science and Engineering
+July 2022 – Aug. 2026
 
-State University of New York Oswego, NY
-Masters of Science in Biomedical and Health Informatics
-August 2023-December 2024
-● Concentration - Data Science
+Lakshya International School, Unduru, Andhra Pradesh
+Senior Secondary Education (CBSE)
+May 2020 – June 2022
 
-PROJECT EXPERIENCE
-Teacher Attendance Monitoring System
-Role: Software Engineer Intern
-Collaboration: Collaborated with IPE Global on a World Bank-funded initiative.
-Design & Development: Spearheaded the creation of a comprehensive Attendance Monitoring System.
-Technologies Used: Integrated AWS facial recognition, complemented by geo-fencing
-and multi-factor authentication, into both a mobile and web application.
-Software QA: Conducted thorough requirement analysis, designed test cases, and performed both
-manual and automated testing. Engaged in system, integration, and user acceptance testing.
-Adopted continuous integration tools for real-time bug tracking and reporting.
+Akshara School, Kakinada, Andhra Pradesh
+Secondary Education (CBSE)
+April 2019 – March 2020
 
-FPS Game (Untitled)
-Role: Game Developer Intern
-Collaboration: Collimation (VR Startup)
-Objective: Develop a multi-dimensional gaming experience allowing users to immerse in 
-virtual concerts and engage with their favorite artists through 
-Virtual Reality (VR) and Augmented Reality (AR).
-Technologies & Tools:
-Languages: C++ for prototype development.
-Game Engine: Unreal Engine for game design and music-driven locomotion.
-Cloud Computing: Utilized AWS EC2 virtual instances to foster real-time team collaboration.
-VR/AR: Incorporated immersive experiences enabling users to attend live concerts virtually or 
-bring AR concerts to their mobile devices.
-Key Responsibilities & Achievements:
-● Spearheaded the development of game prototypes aligning with design team's specifications.
-● Successfully introduced a music-driven locomotion mechanism, elevating the third-person shooter
-gameplay experience.
-● Closely collaborated with the Creative and Immersive teams, playing a pivotal role in 
-assimilating design features into games, ensuring readiness before market launch.
+WORK EXPERIENCE
+Cloud and DevOps Intern
+Volteo Maritime India Pvt. Ltd., Kakinada, Andhra Pradesh
+April 2025 – June 2025
+• Managed Kubernetes clusters for Wayship SaaS, ensuring 99.9% uptime for vessel IoT telemetry.
+• Developed automated CI/CD pipelines for maritime systems, reducing deployment turnaround time by 40%.
+• Optimized AWS resource allocation and autoscaling policies, lowering operational cloud costs by 25%.
 
-FARE (Freelance Activities & Relations Ecosystem)
-Role: Full Stack Developer
-Technologies & Tools:
-Frontend/Backend Development: Java, JavaScript(React)
-Database: MongoDB
-Cloud & Hosting: Amazon Web Services
-Others: Version Control: Git, Containerization: Docker
-Key Responsibilities & Achievements:
-● Ideated, conceptualized, and brought to fruition the FARE platform as the 
-sole developer and founder.
-● Successfully eliminated manual invoicing processes by integrating smart contracts,
-ensuring the automation of agreement and payment stages.
-● Spearheaded the implementation of a robust escrow system, bolstering 
-security and fostering trust among platform users.
+Full Stack Developer Intern
+Vitalitysoft IT Services (OPC) Pvt. Ltd., Hyderabad, Telangana
+June 2025 – August 2025
+• Added dynamic JSON-LD schema, improving rich-result eligibility and increasing CTR by 35%.
+• Integrated SSR and performance tuning, improving Core Web Vitals and boosting organic traffic by 40%.
+• Optimized bundling, caching, and compression, reducing load time by 50% and raising Lighthouse SEO scores.
 
-Calibrated Peer Review Tool
-Role: Full Stack Developer
-Collaboration: In collaboration with IBM stakeholders
-Challenge: Enhance backend functionalities of an educational tool to bolster 
-its usability and drive its adoption among students and faculty.
-Technologies & Tools Used:
-Languages & Frameworks: Java, JavaScript, React
-Microservice Architecture: Developed independent services using Open Liberty and Nginx.
-Deployment: Containerized applications using Docker for consistent deployment.
-Database: Managed and organized data with MongoDB.
-Testing: Employed Junit and Selenium for unit and integration testing. 
-Used Postman for API endpoint testing.
-Project Management & Collaboration:Adopted Agile methodologies and utilized Trello
-Documentation: Created detailed technical requirements and specifications.
-Outcome: Successfully launched the Calibrated Peer Review Tool, with enthusiastic adoption 
-by students and faculty.
+PROJECTS
+Study Flow: AI-Powered Productivity Suite | React, FastAPI, PostgreSQL, Groq API
+Link | GitHub
+• Built a full-stack productivity platform with task management, session tracking, Pomodoro timer, and analytics
+  using React, FastAPI, and PostgreSQL.
+• Integrated Groq-powered artificial intelligence for study plan generation, task breakdown, code explanation, and
+  chat-based learning assistance.
+• Deployed the application using Vercel (frontend + backend) with secure JWT authentication and a modern,
+  responsive interface optimized for real workflows.
 
-RESEARCH EXPERIENCE
-Cyber Physical Systems Lab - SUNY Oswego, NY
-Research Assistant
-November 2022 - Present
-● Tasked with enhancing the realism of autonomous vehicle research tools, 
-simulated autonomous vehicle functionality through an 
-Automotive Cyber Physical System using BeamNG.tech, providing a more
-immersive testing environment.
-● With the aim of showcasing advanced collision avoidance capabilities,
-designed a Collaborative Automotive Calibrated Cruise Control system 
-using BeamNG.py, resulting in a demonstration of a Traffic Collision 
-Avoidance System for the entire network.
+Handwritten Equation Solver | TensorFlow, Next.js, FastAPI, OpenCV, Hugging Face
+Link | GitHub
+• Trained a Convolutional Neural Network(CNN) using TensorFlow achieving 95% accuracy in recognizing
+  handwritten digits and mathematical operators.
+• Implemented an OpenCV-powered image segmentation pipeline including thresholding, contour extraction, and
+  bounding box generation for symbol isolation.
+• Built a full-stack deep learning application using Next.js and FastAPI with drag-and-drop input, bounding-box
+  visualization, and clipboard-based image uploads.
+• Deployed the full system with a FastAPI deep learning inference backend on Hugging Face Spaces and a
+  Vercel-hosted frontend for scalable browser-based equation solving.
 
-Cognitive Dynamics Lab - SUNY Oswego, NY
-Research Assistant
-August 2021 - May 2023
-● Charged with improving motion capture precision for research applications, 
-engineered a markerless motion capture program using OpenPose and DeepLabCut. 
-This achieved a calibration accuracy of 99.3% with Charuco Boards, 
-ensuring near-perfect motion data capture for our research studies.
-● To optimize our lab's data collection procedures, streamlined 
-and automated the process by creating custom Python scripts, 
-resulting in a notable efficiency increase of up to 25%
+Cardio Risk Analyzer | Next.js, FastAPI, XGBoost, CatBoost, Hugging Face, Docker
+Link | GitHub
+• Built a Full-stack Machine Learning system that estimates cardiovascular risk using an ensemble of XGBoost +
+  CatBoost with SHAP visual explainability.
+• Developed a responsive Next.js front-end with real-time health metrics (BMI/MAP/lifestyle scoring) and an
+  animated results dashboard featuring confidence gauges and feature attribution.
+• Deployed the app using Vercel (frontend) and Hugging Face Spaces (Dockerized FastAPI backend) with a
+  production-ready inference API.
 
-Data Analyst - School of Business Oswego, NY
-December 2022- May 2023
-● Employed proficiency in data acquisition and organization techniques
-to extract valuable insights,informing business decisions and strategic planning.
-● Skillfully harnessed tools like Python, Tableau, and Gephi to perform
-intricate data analyses, and subsequently translated results into engaging
-and comprehensible visual representations.
-
-SKILLS & INTERESTS
-Certifications: AWS Academy Cloud Foundations, AWS Academy Cloud Security Foundations, 
-IBM Applied Data Science Specialization
-Computer Science: Java, C, C#, C++, Scala, Prolog, Go, Python, Lisp, 
-AWS, Docker, React, Angular, CSS,Computer Networking
-Data Analytics: SQL, R, NoSQL, Tableau, Excel, R
-Project Management: DevOps, Agile Development, Git, Kubernetes
-Machine Learning: TensorFlow, Keras, Natural Language Processing, Spark
+TECHNICAL SKILLS
+Languages: Python, Go, Ruby, Java, TypeScript, JavaScript, C/C++, SQL, HTML/CSS, R
+Frameworks: React, Next.js, Svelte, Node.js, FastAPI, Flask, Ruby on Rails, JUnit, Tailwind CSS, shadcn/ui
+Developer Tools: Git, GitHub, Docker, Podman, Kubernetes, Jenkins, NGINX, Terraform, AWS, GCP, Azure DevOps
+Libraries: TensorFlow, PyTorch, OpenCV, XGBoost, CatBoost, Scikit-learn, NumPy, pandas, Matplotlib, Seaborn
 
 </pre>
 `;

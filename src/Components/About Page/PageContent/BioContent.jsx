@@ -1,16 +1,15 @@
 const bioContent = `
-<p>As an international student from Nepal pursuing a double major in computer science and cognitive science, I have always been fascinated by the intersection of technology and the human mind. This curiosity led me to pursue a career in software engineering, where I can apply my technical and cognitive skills to solve real-world problems.</p>
+<p>I am a Computer Science and Engineering student at Vellore Institute of Technology, passionate about Cloud Computing, DevOps, and Full Stack Development. My experience includes internships as a Cloud and DevOps Intern at Volteo Maritime India and a Full Stack Developer at Vitalitysoft IT Services.</p>
 
-<p>I have developed a wide variety of skills from my previous internship, research assistantships, and academic studies. During my undergraduate studies, I had the opportunity to work on several projects that allowed me to develop my programming skills and gain a deeper understanding of computational systems. I also had the opportunity to intern at a startup company, where I learned the importance of teamwork and effective communication in the software development process.</p>
-
-<p>Currently, I am looking for opportunities in software engineering. In my spare time, I enjoy solving coding challenges to further enhance my skills and stay up-to-date with the latest technologies. I am currently working on a calibrated peer review tool which functions as a highly scalable web application that assists the process of coordinating and evaluating peer reviews of student work.</p>
+<p>I have worked on projects involving Machine Learning, Computer Vision, AI-powered applications, and Cloud Deployment using tools like Docker, Kubernetes, AWS, and modern web frameworks. I am always eager to learn new technologies and apply them to solve real-world problems.</p>
 
 <p>Skills Include:</p>
 <ul>
-  <li>Certifications: AWS Academy Cloud Foundations, AWS Academy Cloud Security Foundations, IBM Applied Data Science Specialization</li>
-  <li>Computer Science: Java, C, C#, C++, Scala, Prolog, Go, Python, Lisp, AWS, Docker, React, Angular, CSS</li>
-  <li>Data Analytics: SQL, R, NoSQL, Tableau, Excel</li>
-  <li>Project Management: DevOps, Agile Development, Git, Kubernetes, Continuous integration and continuous deployment (CI/CD)</li>
+  <li>Languages: Python, Go, Ruby, Java, TypeScript, JavaScript, C/C++, SQL, HTML/CSS, R</li>
+  <li>Frameworks: React, Next.js, Svelte, Node.js, FastAPI, Flask, Ruby on Rails, JUnit, Tailwind CSS, shadcn/ui</li>
+  <li>Libraries: TensorFlow, PyTorch, OpenCV, XGBoost, CatBoost, Scikit-learn, NumPy, pandas, Matplotlib, Seaborn</li>
+  <li>Developer Tools: Git, GitHub, Docker, Podman, Kubernetes, Jenkins, NGINX, Terraform, AWS, GCP, Azure DevOps</li>
+  <li>Databases: PostgreSQL, MySQL, MongoDB</li>
 </ul>
 `;
 

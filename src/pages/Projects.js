@@ -1,191 +1,116 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../Components/Page Layout/Layout';
-import { DBRModal, RobotRadarModal, RealTimeModal, CPRModal, TeacherAttendanceModal, FPSGameModal, FAREModal } from "../Components/Project Page/ProjectsModal";
+import { StudyFlowModal, HandwrittenEquationSolverModal, CardioRiskAnalyzerModal } from "../Components/Project Page/ProjectsModal";
 
 const Projects = () => {
     const navigate = useNavigate();
-    const [isAnimatingClose, setIsAnimatingClose] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
-    const [isDBRModalOpen, setIsDBRModalOpen] = useState(false);
-    const [isRobotRadarModalOpen, setIsRobotRadarModalOpen] = useState(false);
-    const [isRealTimeModalOpen, setIsRealTimeModalOpen] = useState(false);
-    const [isCPRModalOpen, setIsCPRModalOpen] = useState(false);
-    const [isTeacherAttendanceModalOpen, setIsTeacherAttendanceModalOpen] = useState(false);
-    const [isFPSGameModalOpen, setIsFPSGameModalOpen] = useState(false);
-    const [isFAREModalOpen, setIsFAREModalOpen] = useState(false);
+    const [isStudyFlowModalOpen, setIsStudyFlowModalOpen] = useState(false);
+    const [isHandwrittenEquationSolverModalOpen, setIsHandwrittenEquationSolverModalOpen] = useState(false);
+    const [isCardioRiskAnalyzerModalOpen, setIsCardioRiskAnalyzerModalOpen] = useState(false);
 
     const closeModal = (modalType) => {
         if (isClosing) return;
 
         setIsClosing(true);
         setTimeout(() => {
-            switch(modalType) {
-                case 'dbr':
-                    setIsDBRModalOpen(false);
+            switch (modalType) {
+                case 'studyflow':
+                    setIsStudyFlowModalOpen(false);
                     break;
-                case 'radar':
-                    setIsRobotRadarModalOpen(false);
+                case 'equationsolver':
+                    setIsHandwrittenEquationSolverModalOpen(false);
                     break;
-                case 'realtime':
-                    setIsRealTimeModalOpen(false);
+                case 'cardioanalyzer':
+                    setIsCardioRiskAnalyzerModalOpen(false);
                     break;
-                case 'cpr':
-                    setIsCPRModalOpen(false);
-                    break;
-                case 'teacher':
-                    setIsTeacherAttendanceModalOpen(false);
-                    break;
-                case 'fps':
-                    setIsFPSGameModalOpen(false);
-                    break;
-                case 'fare':
-                    setIsFAREModalOpen(false);
+                default:
                     break;
             }
             setIsClosing(false);
         }, 1500);
     };
 
-    const commands = {
+    const commands = React.useMemo(() => ({
         ls: {
             description: 'List all projects on the page',
             fn: function () {
-                return 'Here are the project names. Enter a name to learn more: \nCPRTool\nLuminex\nFinTrack\nRoboScan\nTeacherAttendance\nFPSGame\nFARE';
+                return 'studyflow\\nequationsolver\\ncardioanalyzer';
             }
         },
-
-        about: {
-            description: 'Go to About page',
+        projects: {
+            description: 'You are here',
             fn: function () {
-                navigate('/about');
-                return 'Redirecting to About page...';
+                return 'You are already at the projects page';
             }
         },
-
-        research: {
-            description: 'Go to Research page',
-            fn: function () {
-                setTimeout(function () {
-                    navigate('/research');
-                }, 1200);
-                return 'Redirecting to the Research Page ...';
-            }
-        },
-
-        misc: {
-            description: 'Go to Misc page',
-            fn: function () {
-                setTimeout(function () {
-                    navigate('/misc');
-                }, 1200);
-                return 'Redirecting to the Miscellaneous Page ...';
-            }
-        },
-
         cd: {
-            description: 'Go to Main page',
+            description: 'Go back',
             fn: function () {
                 setTimeout(function () {
                     navigate('/');
                 }, 1200);
-                return 'Redirecting to Main page...';
+                return 'redirecting to main page...';
             }
         },
-
-        Luminex:{
-            description: 'Diabetic Retinopathy Detection',
+        studyflow: {
+            description: 'Study Flow: AI-Powered Productivity Suite',
             fn: function () {
                 setTimeout(function () {
-                    setIsDBRModalOpen(true);
+                    setIsStudyFlowModalOpen(true);
                 }, 1200);
-                return 'One Convolutional Neural Net Project description coming right up...';
+                return 'Fetching details about Study Flow...';
             }
         },
-
-        FinTrack:{
-            description: 'Real Time Financial Data',
+        equationsolver: {
+            description: 'Handwritten Equation Solver',
             fn: function () {
                 setTimeout(function () {
-                    setIsRealTimeModalOpen(true);
+                    setIsHandwrittenEquationSolverModalOpen(true);
                 }, 1200);
-                return 'Fintech?.....';
+                return 'Fetching details about Handwritten Equation Solver...';
             }
         },
-
-        RoboScan:{
-            description: 'Robot Radar',
+        cardioanalyzer: {
+            description: 'Cardio Risk Analyzer',
             fn: function () {
                 setTimeout(function () {
-                    setIsRobotRadarModalOpen(true);
+                    setIsCardioRiskAnalyzerModalOpen(true);
                 }, 1200);
-                return "Hold your horses...";
+                return 'Fetching details about Cardio Risk Analyzer...';
             }
         },
-
-        CPRTool:{
-            description: 'Calibrated Peer Review Tool',
+        whoami: {
+            description: 'Current user',
             fn: function () {
-                setTimeout(function () {
-                    setIsCPRModalOpen(true);
-                }, 1200);
-                return 'Can this be the next BrightSpace?...';
+                return 'KBS';
             }
         },
-
-        TeacherAttendance: {
-            description: 'Teacher Attendance Monitoring System',
+        date: {
+            description: 'Current date',
             fn: function () {
-                setTimeout(function () {
-                    setIsTeacherAttendanceModalOpen(true);
-                }, 1200);
-                return 'Fetching details about Teacher Attendance Monitoring System...';
+                return new Date().toString();
             }
         },
-
-        FPSGame: {
-            description: 'FPS Game (Untitled)',
+        pwd: {
+            description: 'Print working directory',
             fn: function () {
-                setTimeout(function () {
-                    setIsFPSGameModalOpen(true);
-                }, 1200);
-                return 'Fetching details about FPS Game...';
+                return '/home/kbs/projects';
             }
-        },
-
-        FARE: {
-            description: 'FARE (Freelance Activities & Relations Ecosystem)',
-            fn: function () {
-                setTimeout(function () {
-                    setIsFAREModalOpen(true);
-                }, 1200);
-                return 'Fetching details about FARE...';
-            }
-        },
-    };
+        }
+    }), [navigate]);
 
     return (
-        <Layout commands={commands} welcomeMessage="Ennter command 'ls' to see some cool stuff I built. Use 'cd' to go back to the main page." >
-    {isDBRModalOpen && !isClosing && (
-                <DBRModal isOpen={isDBRModalOpen} onClose={() => closeModal('dbr')} />
+        <Layout commands={commands} welcomeMessage="Enter command 'ls' to see some cool stuff I built. Use 'cd' to go back to the main page." >
+            {isStudyFlowModalOpen && !isClosing && (
+                <StudyFlowModal isOpen={isStudyFlowModalOpen} onClose={() => closeModal('studyflow')} />
             )}
-            {isRealTimeModalOpen && !isClosing && (
-                <RealTimeModal isOpen={isRealTimeModalOpen} onClose={() => closeModal('realtime')} />
+            {isHandwrittenEquationSolverModalOpen && !isClosing && (
+                <HandwrittenEquationSolverModal isOpen={isHandwrittenEquationSolverModalOpen} onClose={() => closeModal('equationsolver')} />
             )}
-            {isRobotRadarModalOpen && !isClosing && (
-                <RobotRadarModal isOpen={isRobotRadarModalOpen} onClose={() => closeModal('radar')} />
-            )}
-            {isCPRModalOpen && !isClosing && (
-                <CPRModal isOpen={isCPRModalOpen} onClose={() => closeModal('cpr')} />
-            )}
-            {isTeacherAttendanceModalOpen && !isClosing && (
-                <TeacherAttendanceModal isOpen={isTeacherAttendanceModalOpen} onClose={() => closeModal('teacher')} />
-            )}
-            {isFPSGameModalOpen && !isClosing && (
-                <FPSGameModal isOpen={isFPSGameModalOpen} onClose={() => closeModal('fps')} />
-            )}
-            {isFAREModalOpen && !isClosing && (
-                <FAREModal isOpen={isFAREModalOpen} onClose={() => closeModal('fare')} />
+            {isCardioRiskAnalyzerModalOpen && !isClosing && (
+                <CardioRiskAnalyzerModal isOpen={isCardioRiskAnalyzerModalOpen} onClose={() => closeModal('cardioanalyzer')} />
             )}
         </Layout>
     );

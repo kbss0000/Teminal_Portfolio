@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import BioModalContent from './PageContent/BioContent';
-import ResumeModalContent from './PageContent/ResumeContent';
 
 const ModalComponent = ({ isOpen, onClose, modalText }) => {
     const [visibleText, setVisibleText] = useState('');
@@ -76,7 +74,22 @@ const ModalComponent = ({ isOpen, onClose, modalText }) => {
     );
 };
 
-const BioModal = (props) => <ModalComponent {...props} modalText={BioModalContent} />;
-const ResumeModal = (props) => <ModalComponent {...props} modalText={ResumeModalContent} />;
+const volteoContent = `
+<h2>Cloud and DevOps Intern</h2>
+<p><strong>Volteo Maritime India Pvt. Ltd.</strong> | Kakinada, Andhra Pradesh | April 2025 – June 2025</p>
+<p>Managed Kubernetes clusters for Wayship SaaS, ensuring 99.9% uptime for vessel IoT telemetry. Developed automated CI/CD pipelines for maritime systems, reducing deployment turnaround time by 40%. Optimized AWS resource allocation and autoscaling policies, lowering operational cloud costs by 25%.</p>
+<p><strong>Technologies:</strong> Kubernetes, Docker, AWS (EC2, S3, IAM, Auto Scaling), CI/CD pipelines</p>
+`;
 
-export { BioModal, ResumeModal };
+const vitalitysoftContent = `
+<h2>Full Stack Developer Intern</h2>
+<p><strong>Vitalitysoft IT Services (OPC) Pvt. Ltd.</strong> | Hyderabad, Telangana | June 2025 – August 2025</p>
+<p>Added dynamic JSON-LD schema, improving rich-result eligibility and increasing CTR by 35%. Integrated SSR and performance tuning, improving Core Web Vitals and boosting organic traffic by 40%. Optimized bundling, caching, and compression, reducing load time by 50% and raising Lighthouse SEO scores.</p>
+<p><strong>Technologies:</strong> React, Next.js, Server-Side Rendering (SSR), Web optimization, SEO, JSON-LD schema</p>
+`;
+
+const VolteoModal = (props) => <ModalComponent {...props} modalText={volteoContent} />;
+const VitalitysoftModal = (props) => <ModalComponent {...props} modalText={vitalitysoftContent} />;
+
+export { VolteoModal, VitalitysoftModal };
+

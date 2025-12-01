@@ -1,41 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import DBRModalContent from './PageContent/DBRContent';
-import RealTimeModalContent from './PageContent/RealTimeContent';
-import RobotRadarModalContent from './PageContent/RobotRadarContent';
-import CPRModalContent from './PageContent/CPRContent';
-import TeacherAttendanceMonitoringSystemContent from './PageContent/TeacherAttendanceMonitoringSystemContent';
-import FPSGameContent from './PageContent/FPSGameContent';
-import FAREContent from './PageContent/FAREContent';
-import CPRImage from './PageContent/CPR1.png';
-import CPRImage2 from './PageContent/CPR2.png';
-//import robotRadarImage1 from './PageContent/topview.png';
-import robotRadarImage2 from './PageContent/radarGUI.png';
+import StudyFlowContent from './PageContent/StudyFlowContent';
+import HandwrittenEquationSolverContent from './PageContent/HandwrittenEquationSolverContent';
+import CardioRiskAnalyzerContent from './PageContent/CardioRiskAnalyzerContent';
 
 const ModalComponent = ({ isOpen, onClose, modalText, images }) => {
     const [visibleText, setVisibleText] = useState('');
     const [typingIndex, setTypingIndex] = useState(0);
     const typingSpeed = 8;
 
-    {images && images.map((img, idx) => (
-        <img key={idx} src={img} alt={`Modal Image ${idx + 1}`} />
-    ))}
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            window.addEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isOpen, onClose]);
 
     useEffect(() => {
         let intervalId;
 
-        if (isOpen) {
+        if (isOpen && modalText) {
             intervalId = setInterval(() => {
                 setVisibleText(prevText => {
+                    if (typingIndex >= modalText.length) {
+                        clearInterval(intervalId);
+                        return prevText;
+                    }
                     const nextChar = modalText[typingIndex];
-                    return prevText + nextChar;
+                    return prevText + (nextChar || '');
                 });
 
-                setTypingIndex(prevIndex => prevIndex + 1);
+                setTypingIndex(prevIndex => {
+                    if (prevIndex >= modalText.length) {
+                        return prevIndex;
+                    }
+                    return prevIndex + 1;
+                });
             }, typingSpeed);
         }
 
-        return () => clearInterval(intervalId);
-    }, [isOpen, typingIndex]);
+        return () => {
+            if (intervalId) clearInterval(intervalId);
+        };
+    }, [isOpen, typingIndex, modalText]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -58,19 +73,15 @@ const ModalComponent = ({ isOpen, onClose, modalText, images }) => {
                 </span>
                 <div dangerouslySetInnerHTML={{ __html: visibleText }}></div>
                 {images && images.map((img, idx) => (
-                    <img key={idx} src={img} alt={`Modal Image ${idx + 1}`} />
+                    <img key={idx} src={img} alt={`Visual content ${idx + 1}`} />
                 ))}
             </div>
         </div>
     );
 };
 
-const DBRModal = (props) => <ModalComponent {...props} modalText={DBRModalContent} />;
-const RobotRadarModal = (props) => <ModalComponent {...props} modalText={RobotRadarModalContent} images={[robotRadarImage2]} />;
-const RealTimeModal = (props) => <ModalComponent {...props} modalText={RealTimeModalContent} />;
-const CPRModal = (props) => <ModalComponent {...props} modalText={CPRModalContent} images={[CPRImage, CPRImage2]} />;
-const TeacherAttendanceModal = (props) => <ModalComponent {...props} modalText={TeacherAttendanceMonitoringSystemContent} />;
-const FPSGameModal = (props) => <ModalComponent {...props} modalText={FPSGameContent} />;
-const FAREModal = (props) => <ModalComponent {...props} modalText={FAREContent} />;
+const StudyFlowModal = (props) => <ModalComponent {...props} modalText={StudyFlowContent} />;
+const HandwrittenEquationSolverModal = (props) => <ModalComponent {...props} modalText={HandwrittenEquationSolverContent} />;
+const CardioRiskAnalyzerModal = (props) => <ModalComponent {...props} modalText={CardioRiskAnalyzerContent} />;
 
-export { DBRModal, RobotRadarModal, RealTimeModal, CPRModal, TeacherAttendanceModal, FPSGameModal, FAREModal };
+export { StudyFlowModal, HandwrittenEquationSolverModal, CardioRiskAnalyzerModal };

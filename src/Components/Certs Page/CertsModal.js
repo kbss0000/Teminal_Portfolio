@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import BioModalContent from './PageContent/BioContent';
-import ResumeModalContent from './PageContent/ResumeContent';
 
 const ModalComponent = ({ isOpen, onClose, modalText }) => {
     const [visibleText, setVisibleText] = useState('');
@@ -76,7 +74,17 @@ const ModalComponent = ({ isOpen, onClose, modalText }) => {
     );
 };
 
-const BioModal = (props) => <ModalComponent {...props} modalText={BioModalContent} />;
-const ResumeModal = (props) => <ModalComponent {...props} modalText={ResumeModalContent} />;
+const oracleJavaContent = `
+<h2>Oracle Java Associate</h2>
+<p>Certification details will be added here.</p>
+`;
 
-export { BioModal, ResumeModal };
+const oracleCloudContent = `
+<h2>Oracle Cloud AI Infrastructure</h2>
+<p>Certification details will be added here.</p>
+`;
+
+const OracleJavaModal = (props) => <ModalComponent {...props} modalText={oracleJavaContent} />;
+const OracleCloudModal = (props) => <ModalComponent {...props} modalText={oracleCloudContent} />;
+
+export { OracleJavaModal, OracleCloudModal };

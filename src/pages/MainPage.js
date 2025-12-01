@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../Components/Page Layout/Layout';
+
 const MainPage = () => {
     const navigate = useNavigate();
-    const commands = {
+
+    const commands = React.useMemo(() => ({
         ls: {
             description: 'List all pages',
             fn: function () {
-                return 'about projects research misc';
+                return 'about projects experience';
             },
         },
         about: {
@@ -28,28 +30,37 @@ const MainPage = () => {
                 return 'Redirecting...';
             },
         },
-        research: {
-            description: 'Go to Research page',
+        experience: {
+            description: 'Go to Experience page',
             fn: function () {
                 setTimeout(function () {
-                    navigate('/research');
+                    navigate('/experience');
                 }, 1200);
                 return 'Redirecting...';
             },
         },
-        misc: {
-            description: 'Go to Misc page',
+        whoami: {
+            description: 'Current user',
             fn: function () {
-                setTimeout(function () {
-                    navigate('/misc');
-                }, 1200);
-                return 'Redirecting...';
-            },
+                return 'KBS';
+            }
         },
-    };
+        date: {
+            description: 'Current date',
+            fn: function () {
+                return new Date().toString();
+            }
+        },
+        pwd: {
+            description: 'Print working directory',
+            fn: function () {
+                return '/home/kbs';
+            }
+        }
+    }), [navigate]);
 
     return (
-        <Layout commands={commands} welcomeMessage="Weelcome! Here in the Matrix if you're stuck, you can always use command 'help'">
+        <Layout commands={commands} welcomeMessage="Welcome! Here in the Matrix if you're stuck, you can always use command 'help'">
         </Layout>
     );
 };
