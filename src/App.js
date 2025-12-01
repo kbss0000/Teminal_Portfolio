@@ -7,8 +7,11 @@ import MainPage from './pages/MainPage';
 
 const App = () => {
     // Use PUBLIC_URL for GitHub Pages deployment, empty for local dev
-    // Create React App sets PUBLIC_URL to the homepage pathname
-    const basename = process.env.PUBLIC_URL || '';
+    // In development, PUBLIC_URL is undefined, so basename should be empty
+    // In production build, PUBLIC_URL will be set to the homepage pathname
+    const basename = process.env.NODE_ENV === 'production' && process.env.PUBLIC_URL 
+        ? process.env.PUBLIC_URL 
+        : '';
     
     return (
         <Router basename={basename}>
