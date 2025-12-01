@@ -4,7 +4,7 @@ An immersive terminal-based portfolio website inspired by The Matrix, featuring 
 
 🌐 **Live Site:** [https://kbss0000.github.io/portfolio_main/](https://kbss0000.github.io/portfolio_main/)
 
-## 🎯 Features
+## Features
 
 - **Terminal Emulator Interface**: Navigate through the portfolio using Unix-like commands
 - **Matrix Rain Animation**: Animated background inspired by The Matrix movie
@@ -14,7 +14,7 @@ An immersive terminal-based portfolio website inspired by The Matrix, featuring 
 - **Experience Page**: Work experience and internship details
 - **About Page**: Resume and bio information
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -39,7 +39,7 @@ npm start
 
 The app will open at `http://localhost:3000`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio_main/
@@ -56,7 +56,7 @@ portfolio_main/
 └── .github/workflows/            # GitHub Actions for deployment
 ```
 
-## 🎮 Available Commands
+## Available Commands
 
 - `ls` - List all available commands
 - `help` - Show help information
@@ -68,7 +68,7 @@ portfolio_main/
 - `date` - Show current date
 - `pwd` - Print working directory
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18
 - **Routing**: React Router DOM
@@ -76,7 +76,7 @@ portfolio_main/
 - **Deployment**: GitHub Pages with GitHub Actions
 - **Build Tool**: Create React App
 
-## 📦 Projects Featured
+## Projects Featured
 
 1. **Study Flow** - AI-Powered Productivity Suite
    - React, FastAPI, PostgreSQL, Groq API
@@ -93,7 +93,7 @@ portfolio_main/
    - [Live Demo](https://cardioml-kbss.vercel.app/)
    - [GitHub](https://github.com/kbss0000/Cardio-Risk-Analyzer)
 
-## 🚢 Deployment
+## Deployment
 
 This portfolio is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers a build and deployment.
 
@@ -106,22 +106,8 @@ npm run build
 # The build folder is ready to be deployed
 ```
 
-## 📝 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
-
-**Kasilanka Bhoopesh Siva Srikar**
-
-- GitHub: [@kbss0000](https://github.com/kbss0000)
-- LinkedIn: [K.B.S Srikar](https://www.linkedin.com/in/kbssrikar/)
-- Email: kbsivasrikar@gmail.com
-
-## ⭐ Show Your Support
-
-If you like this portfolio, give it a star ⭐ on GitHub!
-
----
-
-Built with ❤️ using React and The Matrix inspiration
+Built using React and The Matrix inspiration
